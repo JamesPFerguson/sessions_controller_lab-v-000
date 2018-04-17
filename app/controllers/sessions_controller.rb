@@ -1,9 +1,15 @@
 class SessionController < ApplicationController
 
-  def index
+  def new
   end
 
-  def login
+  def create
+    session[:username] = params[:username]
+    redirect_to '/'
+  end
+
+  def destroy
+    session.delete :username
   end
 
 
